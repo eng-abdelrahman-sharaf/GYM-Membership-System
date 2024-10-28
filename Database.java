@@ -1,16 +1,13 @@
- import java.io.*;
- import java.util.*;
+import java.util.*;
+import java.io.*;
+
 abstract class Database {
    private String filename;
-   private ArrayList<Person> List = new ArrayList<>();
+   private ArrayList<Record> List = new ArrayList<>();
 
-Database(String filename) {
-    this.filename = filename;
-}
-
-String getFilename() {
-    return filename;
-}
+    Database(String filename) {
+        this.filename = filename;
+    }
 
     public void readFromFile (){
         String line;
@@ -28,16 +25,16 @@ String getFilename() {
     }
 
 
-    public abstract Person createRecordFrom (String line);
+    public abstract Record createRecordFrom (String line);
 
 
-    public ArrayList<Person> returnAllRecords (){
+    public ArrayList<Record> returnAllRecords (){
         return List;
     };
 
 
     public boolean contains (String key){
-        for (Person p : List){
+        for (Record p : List){
             if (p.getsearchkey().equals(key)){
                 return true;
             }
@@ -45,8 +42,8 @@ String getFilename() {
         return false;
     }
 
-    public Person getrecord(String key){
-        for (Person p : List){
+    public Record getrecord(String key){
+        for (Record p : List){
             if (p.getsearchkey().equals(key)){
                 return p;
             }
@@ -55,24 +52,30 @@ String getFilename() {
         return null;
     }
 
-    public void insertRecord(Person record){
+    public void insertRecord(Record record){
         if(!List.contains(record)){
             List.add(record);
         }
     }
 
     public void deleteRecord(String key){
-        for (Person p : List){
+        for (Record p : List){
             if (p.getsearchkey().equals(key)){
                 List.remove(p);
             }
-            saveTofile();
+            saveToFile();
         }
         System.out.println("ID incorrect");
     }
 
-    public abstract void  saveTofile();
-
-
+    public void saveToFile() {
+        try (PrintWriter writer = new PrintWriter(new File(filename))) {
+            for(Record record : List){
+                writer.println(record.linerepresentation());
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
 }

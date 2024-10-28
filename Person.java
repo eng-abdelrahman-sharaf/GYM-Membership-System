@@ -1,4 +1,4 @@
-public abstract class Person {
+public abstract class Person implements Record {
     private String name;
     private String ID;
     private String email;
