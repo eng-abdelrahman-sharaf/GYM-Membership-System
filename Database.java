@@ -42,7 +42,7 @@ abstract class Database {
         return false;
     }
 
-    public Record getrecord(String key){
+    public Record getRecord(String key){
         for (Record p : List){
             if (p.getsearchkey().equals(key)){
                 return p;
