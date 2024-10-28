@@ -12,20 +12,6 @@ abstract class Person {
     }
 
     
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-
     public abstract String linerepresentation();
 
     public  String getsearchkey(){
