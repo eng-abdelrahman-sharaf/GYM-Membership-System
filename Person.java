@@ -11,20 +11,7 @@ abstract class Person {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
-    }
-    public String getPhone() {
-        return phone;
-    }
-    public String getName() {
-        return name;
-    }
-    public String getID() {
-        return ID;
-    }
-
-
+    
     public void setEmail(String email) {
         this.email = email;
     }
