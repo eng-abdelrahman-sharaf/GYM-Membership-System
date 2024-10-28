@@ -1,8 +1,8 @@
-abstract class Person {
-    String name;
-    String ID;
-    String email;
-    String phone;
+public abstract class Person {
+    private String name;
+    private String ID;
+    private String email;
+    private String phone;
 
     public Person(String name, String ID, String email, String phone) {
         this.name = name;
@@ -11,13 +11,28 @@ abstract class Person {
         this.phone = phone;
     }
 
-    
-    public abstract String linerepresentation();
 
     public  String getsearchkey(){
         return this.ID;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+
+    public abstract String linerepresentation();
 
 }
