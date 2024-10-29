@@ -3,7 +3,7 @@ public class TrainerDatabase extends Database{
         super(name);
     }
 
-    public Person createRecordFrom(String line){
+    public Record createRecordFrom(String line){
         String[] tokens = line.replaceAll(" ","").split(",");
         Trainer tn = new Trainer(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4]);
         return tn;

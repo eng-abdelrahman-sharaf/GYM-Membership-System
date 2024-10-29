@@ -1,8 +1,12 @@
-public class Trainer extends Person {
+public class Trainer implements Record {
 
-   private String Speciality;
-    public Trainer(String ID, String name, String email, String speciality,String phone) {
-        super(name, ID, email, phone);
+    private String Speciality, name , ID , email , phone;
+
+    public Trainer(String ID, String name, String email, String speciality, String phone) {
+        this.name = name;
+        this.ID = ID;
+        this.email = email;
+        this.phone = phone;
         this.Speciality = speciality;
     }
 
@@ -12,7 +16,7 @@ public class Trainer extends Person {
     }
     
     public String linerepresentation() {
-        String data = this.getID() + "," + this.getName() + "," + this.getEmail() + "," + this.Speciality + "," + this.getPhone();
+        String data = this.ID + "," + this.name + "," + this.email + "," + this.Speciality + "," + this.phone;
         return data;
     }
 
