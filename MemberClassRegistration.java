@@ -10,7 +10,6 @@ public class MemberClassRegistration implements Record {
         this.classID = classID;
         this.registrationDate = registrationDate;
         this.status = status;
-
     }
     
     public String getMemberID() {
@@ -24,15 +23,16 @@ public class MemberClassRegistration implements Record {
     public LocalDate getRegistrationDate() {
         return registrationDate;
     }
-
+   
+            
+    @Override
     public String linerepresentation() {
         return memberID + ", " + classID + ", " + registrationDate + ", " + status;
     }
 
     @Override
     public String getsearchkey() {
-        // TODO Auto-generated method stub
-        return null;
+        return memberID+classID;
     }
     
 }
