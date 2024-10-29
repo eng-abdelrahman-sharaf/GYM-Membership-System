@@ -54,7 +54,7 @@ public class TrainerRole {
         }
         MemberClassRegistration registration = (MemberClassRegistration) registrationDatabase
                 .getRecord(memberID + classID);
-        if (registration.getRegistrationDate().plusDays(2).isBefore(LocalDate.now())) {
+        if (registration.getRegistrationDate().plusDays(3).isBefore(LocalDate.now())) {
             return false;
         }
         registrationDatabase.deleteRecord(memberID + classID);
