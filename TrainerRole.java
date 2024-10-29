@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
 public class TrainerRole {
-    MemberDatabase memberDatabase;
-    ClassDatabase classDatabase;
-    MemberClassRegistrationDatabase registrationDatabase;
+    private MemberDatabase memberDatabase;
+    private ClassDatabase classDatabase;
+    private MemberClassRegistrationDatabase registrationDatabase;
 
     public TrainerRole() {
         registrationDatabase = new MemberClassRegistrationDatabase("Registrations.txt");

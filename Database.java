@@ -58,14 +58,17 @@ abstract class Database {
         }
     }
 
-    public void deleteRecord(String key){
-        for (Record p : List){
-            if (p.getsearchkey().equals(key)){
-                List.remove(p);
+    public void deleteRecord(String key) {
+        Record record = null;
+        for (Record p : List) {
+            if (p.getsearchkey().equals(key)) {
+                record = p;
+                break;
             }
-            saveToFile();
         }
-        System.out.println("ID incorrect");
+        if (record != null) {
+            List.remove(record);
+        } else System.out.println("ID incorrect");
     }
 
     public void saveToFile() {
