@@ -11,6 +11,7 @@ public class Validation {
     public boolean validateMemberID(String memberID) {
         return memberID.matches("M+[0-9]+");
     }
+
     public boolean validateTrainerID(String memberID) {
         return memberID.matches("T+[0-9]+");
     }
