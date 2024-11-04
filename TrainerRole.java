@@ -14,10 +14,13 @@ public class TrainerRole {
         classDatabase.readFromFile();
     }
 
-    public void addMember(String memberID, String name, String membershipType, String email, String phoneNumber,
+    public boolean addMember(String memberID, String name, String membershipType, String email, String phoneNumber,
             String status) {
         Member member = new Member(memberID, name, membershipType, email, phoneNumber, status);
-        memberDatabase.insertRecord(member);
+        if(memberDatabase.insertRecord(member))
+            return true;
+        return false;
+
     }
 
     public ArrayList<Record> getListOfMembers() {

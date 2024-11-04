@@ -52,13 +52,15 @@ abstract class Database {
         return null;
     }
 
-    public void insertRecord(Record record){
+    public boolean insertRecord(Record record){
         if(!List.contains(record)){
             List.add(record);
+            return true;
         }
+        return false;
     }
 
-    public void deleteRecord(String key) {
+    public boolean deleteRecord(String key) {
         Record record = null;
         for (Record p : List) {
             if (p.getsearchkey().equals(key)) {
@@ -68,7 +70,11 @@ abstract class Database {
         }
         if (record != null) {
             List.remove(record);
-        } else System.out.println("ID incorrect");
+            return true;
+        } else {
+            System.out.println("ID incorrect");
+            return false;
+        }
     }
 
     public void saveToFile() {

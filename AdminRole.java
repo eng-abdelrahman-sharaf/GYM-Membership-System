@@ -7,17 +7,22 @@ public class AdminRole {
         database.readFromFile();
     }
 
-    public void addTrainer(String trainerId, String name, String email, String specialty, String phoneNumber) {
+    public boolean addTrainer(String trainerId, String name, String email, String specialty, String phoneNumber) {
         Trainer trainer = new Trainer(trainerId, name, email, specialty, phoneNumber);
-        database.insertRecord(trainer);
+        if(database.insertRecord(trainer))
+            return true;
+        return false;
     }
 
     public ArrayList<Record> getListOfTrainers() {
         return database.returnAllRecords();
     }
 
-    public void removeTrainer(String key) {
-        database.deleteRecord(key);
+    public boolean removeTrainer(String key) {
+
+        if(database.deleteRecord(key))
+            return true;
+        return false;
     }
 
     public void logout() {
