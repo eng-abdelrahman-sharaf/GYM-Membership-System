@@ -1,3 +1,6 @@
+import backend.*;
+import backend.Class;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -53,10 +56,14 @@ public class FirstPage extends JFrame {
     private TrainerRole tr = new TrainerRole();
     private AdminRole ar = new AdminRole();
     public FirstPage() {
-        setVisible(true);
-        setSize(new Dimension(400, 400));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MainPanel.removeAll();
         setContentPane(MainPanel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+
         Adminbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -230,19 +237,5 @@ public class FirstPage extends JFrame {
             }
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

@@ -1,0 +1,1 @@
+public enum ERROR_TYPE {NO_ERROR , INVALID , NOT_EXISTING }

@@ -1,38 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="FirstPage">
-  <grid id="27dc6" binding="MainPanel" layout-manager="CardLayout" hgap="0" vgap="0">
+  <grid id="27dc6" binding="MainPanel" layout-manager="CardLayout" hgap="10" vgap="10">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="7cf34" binding="initialpanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="10" left="10" bottom="10" right="10"/>
-        <constraints>
-          <card name="Card1"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="2c9ac" class="javax.swing.JButton" binding="Trainerbutton">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Trainer Role"/>
-            </properties>
-          </component>
-          <component id="ad830" class="javax.swing.JButton" binding="Adminbutton">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Admin Role"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="2b776" binding="TrainerPanel" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
@@ -123,14 +97,6 @@
               <text value="Add Trainer "/>
             </properties>
           </component>
-          <component id="bf813" class="javax.swing.JButton" binding="removeTrainerButton" default-binding="true">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Remove Trainer"/>
-            </properties>
-          </component>
           <component id="941b4" class="javax.swing.JButton" binding="viewTrainerButton" default-binding="true">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -145,6 +111,14 @@
             </constraints>
             <properties>
               <text value="Logout"/>
+            </properties>
+          </component>
+          <component id="8c44b" class="javax.swing.JButton" binding="removeTrainerButton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Remove Trainer"/>
             </properties>
           </component>
         </children>
@@ -493,6 +467,32 @@
             </constraints>
             <properties>
               <text value="TrainerID"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="7cf34" binding="initialpanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <card name="Card1"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="2c9ac" class="javax.swing.JButton" binding="Trainerbutton">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Trainer Role"/>
+            </properties>
+          </component>
+          <component id="ad830" class="javax.swing.JButton" binding="Adminbutton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Admin Role"/>
             </properties>
           </component>
         </children>

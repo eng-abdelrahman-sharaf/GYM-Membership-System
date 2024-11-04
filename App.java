@@ -1,7 +1,9 @@
-import org.w3c.dom.ls.LSOutput;
+import backend.TrainerRole;
+import backend.Record;
 
-import java.sql.SQLOutput;
+
 import java.time.LocalDate;
+
 public class App {
     public static void main(String[] args) {
         TrainerRole trainer = new TrainerRole();
@@ -22,7 +24,7 @@ public class App {
             System.out.println(r.linerepresentation());
         }
         trainer.logout();
-        FirstPage fp  = new FirstPage();
+        MainWindow mainWindow = new MainWindow();
         Validation v = new Validation();
         System.out.println(v.validateMemberID("M1654"));
     }
