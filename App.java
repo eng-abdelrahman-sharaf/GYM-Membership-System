@@ -1,3 +1,6 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
@@ -19,5 +22,8 @@ public class App {
             System.out.println(r.linerepresentation());
         }
         trainer.logout();
+        FirstPage fp  = new FirstPage();
+        Validation v = new Validation();
+        System.out.println(v.validateMemberID("M1654"));
     }
 }
