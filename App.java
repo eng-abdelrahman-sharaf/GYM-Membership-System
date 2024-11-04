@@ -4,6 +4,9 @@ import java.sql.SQLOutput;
 import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
+        
+        /////////////////////////////////////////////////
+        // placeholders
         TrainerRole trainer = new TrainerRole();
         trainer.addClass("Cnew", "cName", "Tnew", 15, 20);
         trainer.addMember("Mnew", "roooooo", "Premium", "dodo@mailodo", "0122489466", "active");
@@ -22,8 +25,9 @@ public class App {
             System.out.println(r.linerepresentation());
         }
         trainer.logout();
-        FirstPage fp  = new FirstPage();
-        Validation v = new Validation();
-        System.out.println(v.validateMemberID("M1654"));
+        /////////////////////////////////////////
+        
+        MainWindow mainWindow = new MainWindow();
+
     }
 }
