@@ -226,9 +226,16 @@ public class FirstPage extends JFrame {
                 ar.logout();
             }
         });
+
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println(new Card(){
+                    @Override
+                    public JPanel getPanel() {
+                        return null;
+                    }
+                });
                 String ID = trainerIDfield.getText();
                 if(ar.removeTrainer(ID))
                     JOptionPane.showMessageDialog(null, "Trainer with ID=" + ID + " was deleted.", "", JOptionPane.INFORMATION_MESSAGE);

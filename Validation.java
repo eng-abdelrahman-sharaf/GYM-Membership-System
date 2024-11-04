@@ -3,17 +3,19 @@ import backend.MemberDatabase;
 import backend.TrainerDatabase;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Validation {
-    public void displayInvalidity(JPanel panel , String field){
+    public static void displayInvalidity(Component panel , String field){
             Utils.displayErrorMessage(panel , field+ " is not valid");
     }
 
-    public void displayNotFound(JPanel panel , String field){
+    public static void displayNotFound(JPanel panel , String field){
         Utils.displayErrorMessage(panel , field+ " was not found");
     }
 
     public static boolean validateName(String name) {
+        displayInvalidity(, "Name");
         return name.matches("[a-zA-Z]+");
     }
     public static boolean validateEmail(String email) {
@@ -22,16 +24,18 @@ public class Validation {
     public static boolean validatePhone(String phone) {
         return phone.matches("01+[0-9]{9}");
     }
-    public static ERROR_TYPE validateMemberID(String memberID , MemberDatabase db) {
+    public static ERROR_TYPE validateMemberID(String memberID , MemberDatabase db , JPanel panel) {
         if(memberID.matches("M+[0-9]+")){
             if(db.contains(memberID))
                 return ERROR_TYPE.NO_ERROR;
-            else {
-
+                else {
+                displayNotFound(panel, "Member ID");
                 return ERROR_TYPE.NOT_EXISTING;
             }
         }
-        else return ERROR_TYPE.INVALID;
+        else
+        return ERROR_TYPE.INVALID;
+        displayInvalidity(panel , "Member ID");
     }
 
     public static ERROR_TYPE validateTrainerID(String trainerID , TrainerDatabase db ) {
