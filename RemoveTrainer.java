@@ -17,7 +17,10 @@ public class RemoveTrainer implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String ID = TrainerIDtoRemove.getText();
-                if(utils.getAdminRole().removeTrainer(ID))
+                if(!utils.validateTrainerID(ID)){
+                    utils.displayErrorMessage("Invalid Trainer ID");
+                }
+                else if(utils.getAdminRole().removeTrainer(ID))
                     utils.displaySuccessMessage("Trainer with ID=" + ID + " was deleted.");
                 else
                     utils.displayErrorMessage( "Trainer does not exist.");
