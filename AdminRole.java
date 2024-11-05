@@ -3,7 +3,7 @@ public class AdminRole {
     private TrainerDatabase database;
     
     public AdminRole() {
-        database = new TrainerDatabase("Trainer.txt");
+        database = new TrainerDatabase(FileNames.TRAINER_FILENAME);
         database.readFromFile();
     }
 

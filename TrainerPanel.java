@@ -31,7 +31,7 @@ public class TrainerPanel implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //AddMember
-                utils.goToPage(null);
+                utils.goToPage(new AddMember(utils));
             }
         });
 
@@ -39,7 +39,7 @@ public class TrainerPanel implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //initialpanel
-                utils.goToPage(null);
+                utils.goToPage(new DefaultPage(utils));
                 utils.getTrainerRole().logout();
             }
         });
@@ -54,6 +54,18 @@ public class TrainerPanel implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 utils.goToPage(new ViewMembers(utils));
+            }
+        });
+        viewClassesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                utils.goToPage(new ViewClasses(utils));
+            }
+        });
+        viewRegistrationsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                utils.goToPage(new ViewRegistrations(utils));
             }
         });
     }

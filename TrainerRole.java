@@ -6,9 +6,9 @@ public class TrainerRole {
     private MemberClassRegistrationDatabase registrationDatabase;
 
     public TrainerRole() {
-        registrationDatabase = new MemberClassRegistrationDatabase("Registrations.txt");
-        memberDatabase = new MemberDatabase("Members.txt");
-        classDatabase = new ClassDatabase("Class.txt");
+        registrationDatabase = new MemberClassRegistrationDatabase(FileNames.REGISTRATION_FILENAME);
+        memberDatabase = new MemberDatabase(FileNames.MEMBER_FILENAME);
+        classDatabase = new ClassDatabase(FileNames.CLASS_FILENAME);
         registrationDatabase.readFromFile();
         memberDatabase.readFromFile();
         classDatabase.readFromFile();
@@ -71,6 +71,18 @@ public class TrainerRole {
 
     public ArrayList<Record> getListOfRegistrations() {
         return registrationDatabase.returnAllRecords();
+    }
+
+    public ClassDatabase getClassDatabase() {
+        return classDatabase;
+    }
+
+    public MemberClassRegistrationDatabase getRegistrationDatabase() {
+        return registrationDatabase;
+    }
+
+    public MemberDatabase getMemberDatabase() {
+        return memberDatabase;
     }
 
     public void logout() {

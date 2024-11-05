@@ -18,9 +18,10 @@ public class RemoveTrainer implements Card {
             public void actionPerformed(ActionEvent e) {
                 String ID = TrainerIDtoRemove.getText();
                 if(utils.getAdminRole().removeTrainer(ID))
-                    JOptionPane.showMessageDialog(null, "Trainer with ID=" + ID + " was deleted.", "", JOptionPane.INFORMATION_MESSAGE);
+                    utils.displaySuccessMessage("Trainer with ID=" + ID + " was deleted.");
                 else
-                    JOptionPane.showMessageDialog(null, "Trainer does not exist.");
+                    utils.displayErrorMessage( "Trainer does not exist.");
+                utils.goToPage(new AdminPanel(utils));
             }
         });
     }

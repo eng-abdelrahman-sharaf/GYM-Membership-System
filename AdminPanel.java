@@ -40,6 +40,12 @@ public class AdminPanel implements Card {
                 utils.getAdminRole().logout();
             }
         });
+        viewTrainerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                utils.goToPage(new ViewTrainers(utils));
+            }
+        });
     }
 
 }

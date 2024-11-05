@@ -28,16 +28,12 @@ public class AddClassPanel  implements Card {
                 int Max = (int)MaxSpinner.getValue();
                 if(utils.validateName(ClassName)  && utils.validateClassID(ClassID) && utils.validateTrainerID(TrainerID) && (Max>0) && (ClassDuration>0) ) {
                     Class class_ = new Class(ClassID,ClassName,TrainerID,Max,ClassDuration);
-                    JOptionPane.showMessageDialog(null, "Class was added.","", JOptionPane.INFORMATION_MESSAGE);
-                    //TrainerPanel
-                    utils.goToPage(new TrainerPanel(utils));
+                    utils.displaySuccessMessage("Class was added");
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Please enter all the fields correctly.");
-                    //TrainerPanel
-                    utils.goToPage(new TrainerPanel(utils));
+                    utils.displayErrorMessage("Please enter all the fields correctly.");
                 }
-
+                utils.goToPage(new TrainerPanel(utils));
             }
         });
 

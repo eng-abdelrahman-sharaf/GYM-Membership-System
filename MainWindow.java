@@ -7,6 +7,7 @@ public class MainWindow extends JFrame {
     public MainWindow() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(MainPanel);
+        setTitle("GYM Membership System");
         pack();
         setVisible(true);
         setLocationRelativeTo(null);

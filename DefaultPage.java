@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,7 +19,7 @@ public class DefaultPage implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // adminPanel
-                utils.goToPage(new AdminPanel(utils));
+                utils.goToPage(new AdminLogin(utils));
             }
         });
 
@@ -26,7 +27,7 @@ public class DefaultPage implements Card {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //trainerPanel
-                utils.goToPage(new TrainerPanel(utils));
+                utils.goToPage(new TrainerLogin(utils));
             }
         });
     }

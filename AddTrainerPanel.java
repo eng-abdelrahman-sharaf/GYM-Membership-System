@@ -27,18 +27,13 @@ public class AddTrainerPanel implements Card {
                 String Name = trainerName.getText();
                 String speciality = TrainerSepciality.getText();
                 if (!(utils.validateName(Name) && utils.validateEmail(Email) && utils.validatePhone(Phone) && utils.validateTrainerID(ID))) {
-                    JOptionPane.showMessageDialog(null, "Please enter all the fields correctly.");
-                    //AdminPanel
-                    utils.goToPage(new AdminPanel(utils));
+                    utils.displayErrorMessage("Please enter all the fields correctly.");
                 } else if (!utils.getAdminRole().addTrainer(ID,Name,Email,speciality,Phone)) {
-                    JOptionPane.showMessageDialog(null, "Trainer already exists.");
-                    //AdminPanel
-                    utils.goToPage(new AdminPanel(utils));
+                    utils.displayErrorMessage("This trainer already exists.");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Trainer with ID=" + ID + " Was added.", "", JOptionPane.INFORMATION_MESSAGE);
-                    //AdminPanel
-                    utils.goToPage(new AdminPanel(utils));
+                    utils.displaySuccessMessage("Trainer with ID=" + ID + " Was added.");
                 }
+                utils.goToPage(new AdminPanel(utils));
 
             }
         });
