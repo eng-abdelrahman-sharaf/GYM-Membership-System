@@ -44,5 +44,17 @@ public class TrainerPanel implements Card {
             }
         });
 
+        cancelRegistrationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                utils.goToPage(new CancelRegisteration(utils));
+            }
+        });
+        viewMembersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                utils.goToPage(new ViewMembers(utils));
+            }
+        });
     }
 }

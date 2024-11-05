@@ -40,14 +40,6 @@
               <text value="View Registrations"/>
             </properties>
           </component>
-          <component id="cd47b" class="javax.swing.JButton" binding="cancelRegistrationButton" default-binding="true">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Cancel Registration"/>
-            </properties>
-          </component>
           <component id="85767" class="javax.swing.JButton" binding="registerMemberForClassButton" default-binding="true">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -78,6 +70,14 @@
             </constraints>
             <properties>
               <text value="View Classes"/>
+            </properties>
+          </component>
+          <component id="cd47b" class="javax.swing.JButton" binding="cancelRegistrationButton" default-binding="true">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Cancel Registration"/>
             </properties>
           </component>
         </children>
